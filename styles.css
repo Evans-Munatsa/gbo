@@ -1,0 +1,38 @@
+body {
+  background-color: red;
+}
+
+.number1, .number2, .number3, .number4, .number5, .number6, .number7, .number8, .number9{
+  background-color: green;
+  width: 200px;
+  text-align: center;
+  font-size: 150px;
+  font-weight: bolder;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+#first, #second, #third {
+  display: inline-flex;
+  margin: 20px;
+}
+
+#message {
+  height: 300px;
+  width: 1200px;
+  background-color: yellowgreen;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+.highlight {
+  background-color: blue;
+}
+
+.container {
+  text-align: center;
+}
+
+.button {
+  text-align: -webkit-center;
+}
