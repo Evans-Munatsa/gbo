@@ -29,9 +29,7 @@ function elements() {
       document.getElementsByClassName("number")[0].classList.add("highlight");
       document.getElementsByClassName("number")[1].classList.add("highlight");
       document.getElementsByClassName("number")[2].classList.add("highlight");
-    }
-
-    if (numbers[0].innerHTML === numbers[1].innerHTML) {
+    } else if (numbers[0].innerHTML === numbers[1].innerHTML) {
       document.getElementsByClassName("number")[0].classList.add("highlight");
       document.getElementsByClassName("number")[1].classList.add("highlight");
     } else if (numbers[0].innerHTML === numbers[2].innerHTML) {
