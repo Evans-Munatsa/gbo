@@ -22,28 +22,35 @@ function clear() {
 
 function elements() {
   var numbers = document.querySelectorAll('.number');
-
-
   // give random number to all the elements
   for (var i = 0; i < numbers.length; i++) {
     numbers[i].innerHTML = random(0, 9);
   }
-
   // make everything green
   clear();
 
-
-  // for (var j = 0; j < numbers.length; j++) {
-  //   numbers[j].innerHTML =
-  // }
   // same row matching
-  if (numbers[0].innerHTML === numbers[1].innerHTML && numbers[0].innerHTML ===
-    numbers[2].innerHTML && numbers[1].innerHTML === numbers[2].innerHTML) {
-    document.getElementsByClassName("number")[0].classList.add("highlight");
-    document.getElementsByClassName("number")[1].classList.add("highlight");
-    document.getElementsByClassName("number")[2].classList.add("highlight");
+
+  function matchWholeRow(start) {
+    var start = 0;
+    if (numbers[start].innerHTML === numbers[start + 1].innerHTML && numbers[
+        start].innerHTML === numbers[start + 2].innerHTML && numbers[start + 1]
+      .innerHTML ===
+      numbers[start + 2].innerHTML) {
+      document.getElementsByClassName("number")[start].classList.add(
+        "highlight");
+      document.getElementsByClassName("number")[start + 1].classList.add(
+        "highlight");
+      document.getElementsByClassName("number")[start + 2].classList.add(
+        "highlight");
+    }
   }
 
+  matchWholeRow(0);
+  matchWholeRow(3);
+  matchWholeRow(6);
+
+  //first row
   if (numbers[0].innerHTML === numbers[1].innerHTML) {
     document.getElementsByClassName("number")[0].classList.add("highlight");
     document.getElementsByClassName("number")[1].classList.add("highlight");
@@ -61,14 +68,7 @@ function elements() {
       " match");
   }
 
-
-  if (numbers[3].innerHTML === numbers[4].innerHTML && numbers[3].innerHTML ===
-    numbers[5].innerHTML && numbers[4].innerHTML === numbers[5].innerHTML) {
-    document.getElementsByClassName("number")[3].classList.add("highlight");
-    document.getElementsByClassName("number")[4].classList.add("highlight");
-    document.getElementsByClassName("number")[5].classList.add("highlight");
-  }
-
+  //second row
   if (numbers[3].innerHTML === numbers[4].innerHTML) {
     document.getElementsByClassName("number")[3].classList.add("highlight");
     document.getElementsByClassName("number")[4].classList.add("highlight");
@@ -86,13 +86,7 @@ function elements() {
       " match");
   }
 
-  if (numbers[6].innerHTML === numbers[7].innerHTML && numbers[6].innerHTML ===
-    numbers[8].innerHTML && numbers[7].innerHTML === numbers[8].innerHTML) {
-    document.getElementsByClassName("number")[6].classList.add("highlight");
-    document.getElementsByClassName("number")[7].classList.add("highlight");
-    document.getElementsByClassName("number")[8].classList.add("highlight");
-  }
-
+  //third
   if (numbers[6].innerHTML === numbers[7].innerHTML) {
     document.getElementsByClassName("number")[6].classList.add("highlight");
     document.getElementsByClassName("number")[7].classList.add("highlight");
@@ -108,14 +102,6 @@ function elements() {
     document.getElementsByClassName("number")[8].classList.add("highlight");
     displayMessage(numbers[7].innerHTML + " and " + numbers[8].innerHTML +
       " match");
-  }
-
-  // vertical matching
-  if (numbers[0].innerHTML === numbers[3].innerHTML && numbers[0].innerHTML ===
-    numbers[6].innerHTML && numbers[3].innerHTML === numbers[6].innerHTML) {
-    document.getElementsByClassName("number")[0].classList.add("highlight");
-    document.getElementsByClassName("number")[3].classList.add("highlight");
-    document.getElementsByClassName("number")[6].classList.add("highlight");
   }
 
   if (numbers[0].innerHTML === numbers[3].innerHTML) {
@@ -135,13 +121,6 @@ function elements() {
       " match");
   }
 
-  if (numbers[2].innerHTML === numbers[5].innerHTML && numbers[2].innerHTML ===
-    numbers[8].innerHTML && numbers[5].innerHTML === numbers[8].innerHTML) {
-    document.getElementsByClassName("number")[2].classList.add("highlight");
-    document.getElementsByClassName("number")[5].classList.add("highlight");
-    document.getElementsByClassName("number")[8].classList.add("highlight");
-  }
-
   if (numbers[2].innerHTML === numbers[5].innerHTML) {
     document.getElementsByClassName("number")[2].classList.add("highlight");
     document.getElementsByClassName("number")[5].classList.add("highlight");
@@ -157,13 +136,6 @@ function elements() {
     document.getElementsByClassName("number")[8].classList.add("highlight");
     displayMessage(numbers[5].innerHTML + " and " + numbers[8].innerHTML +
       " match");
-  }
-
-  if (numbers[1].innerHTML === numbers[4].innerHTML && numbers[1].innerHTML ===
-    numbers[7].innerHTML && numbers[4].innerHTML === numbers[7].innerHTML) {
-    document.getElementsByClassName("number")[1].classList.add("highlight");
-    document.getElementsByClassName("number")[4].classList.add("highlight");
-    document.getElementsByClassName("number")[7].classList.add("highlight");
   }
 
   if (numbers[1].innerHTML === numbers[4].innerHTML) {
@@ -183,14 +155,6 @@ function elements() {
       " match");
   }
 
-  // across matching numbers
-  if (numbers[0].innerHTML === numbers[4].innerHTML && numbers[0].innerHTML ===
-    numbers[8].innerHTML && numbers[4].innerHTML === numbers[8].innerHTML) {
-    document.getElementsByClassName("number")[0].classList.add("highlight");
-    document.getElementsByClassName("number")[4].classList.add("highlight");
-    document.getElementsByClassName("number")[8].classList.add("highlight");
-  }
-
   if (numbers[0].innerHTML === numbers[4].innerHTML) {
     document.getElementsByClassName("number")[0].classList.add("highlight");
     document.getElementsByClassName("number")[4].classList.add("highlight");
@@ -208,13 +172,6 @@ function elements() {
       " match");
   }
 
-  if (numbers[2].innerHTML === numbers[4].innerHTML && numbers[2].innerHTML ===
-    numbers[6].innerHTML && numbers[4].innerHTML === numbers[6].innerHTML) {
-    document.getElementsByClassName("number")[2].classList.add("highlight");
-    document.getElementsByClassName("number")[4].classList.add("highlight");
-    document.getElementsByClassName("number")[6].classList.add("highlight");
-  }
-
   if (numbers[2].innerHTML === numbers[4].innerHTML) {
     document.getElementsByClassName("number")[2].classList.add("highlight");
     document.getElementsByClassName("number")[4].classList.add("highlight");
@@ -230,18 +187,6 @@ function elements() {
     document.getElementsByClassName("number")[6].classList.add("highlight");
     displayMessage(numbers[4].innerHTML + " and " + numbers[6].innerHTML +
       " match");
-  }
-
-  // match little
-  if (numbers[0].innerHTML === numbers[5].innerHTML && numbers[2].innerHTML ===
-    numbers[3].innerHTML && numbers[6].innerHTML === numbers[5].innerHTML &&
-    numbers[3].innerHTML === numbers[8].innerHTML) {
-    document.getElementsByClassName("number")[0].classList.add("highlight");
-    document.getElementsByClassName("number")[2].classList.add("highlight");
-    document.getElementsByClassName("number")[3].classList.add("highlight");
-    document.getElementsByClassName("number")[5].classList.add("highlight");
-    document.getElementsByClassName("number")[6].classList.add("highlight");
-    document.getElementsByClassName("number")[8].classList.add("highlight");
   }
 
   if (numbers[0].innerHTML === numbers[5].innerHTML) {
