@@ -3,6 +3,7 @@ function random(min, max) {
   return maths;
 }
 
+// make everything green
 function clear() {
   document.getElementsByClassName("number")[0].classList.remove("highlight");
   document.getElementsByClassName("number")[1].classList.remove("highlight");
@@ -15,22 +16,14 @@ function clear() {
   document.getElementsByClassName("number")[8].classList.remove("highlight");
 }
 
-// var matched = document.querySelectorAll('.number').classList.add("highlight");
-// for (var j = 0; j < matched.length; j++) {
-//   matched[j]
-// }
-
 function elements() {
   var numbers = document.querySelectorAll('.number');
-  // give random number to all the elements
   for (var i = 0; i < numbers.length; i++) {
     numbers[i].innerHTML = random(0, 9);
   }
-  // make everything green
   clear();
 
   // same row matching
-
   function matchWholeRow(start) {
     var start = 0;
     if (numbers[start].innerHTML === numbers[start + 1].innerHTML && numbers[
