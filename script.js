@@ -8,6 +8,8 @@ var displayMessage = function(text) {
   message.innerHTML = text;
 };
 
+var message = [];
+
 function elements() {
   var numbers = document.querySelectorAll('.number');
   //clears every highlight
