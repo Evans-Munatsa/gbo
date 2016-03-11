@@ -287,10 +287,11 @@ function elements() {
         " match");
     }
   }
+}
 
-  var displayMessage = function(text) {
-    var message = document.getElementById("message");
-    message.innerHTML = text;
-  };
+var displayMessage = function(text) {
+  var message = document.getElementById("message");
+  message.innerHTML = text;
+};
 
-  elements();
+elements();
