@@ -3,6 +3,11 @@ function random(min, max) {
   return maths;
 }
 
+var displayMessage = function(text) {
+  var message = document.getElementById("message");
+  message.innerHTML = text;
+};
+
 function elements() {
   var numbers = document.querySelectorAll('.number');
   //clears every highlight
@@ -195,11 +200,5 @@ function elements() {
   }
 }
 
-var displayMessage = function(text) {
-  var message = document.getElementById("message");
-  message.innerHTML = text;
-};
-
 document.getElementById("button").addEventListener("click", elements);
-
 elements();
