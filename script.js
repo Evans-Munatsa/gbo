@@ -7,31 +7,29 @@ var displayMessage = function(text) {
   var message = document.getElementById("message").innerHTML = text;
 };
 
+// same row matching
+function matchWholeRow(start) {
+  //var start = 0;
+  if (numbers[start].innerHTML === numbers[start + 1].innerHTML && numbers[
+      start].innerHTML === numbers[start + 2].innerHTML && numbers[start + 1]
+    .innerHTML ===
+    numbers[start + 2].innerHTML) {
+    number[start].classList.add("highlight");
+    number[start + 1].classList.add("highlight");
+    number[start + 2].classList.add("highlight");
+  }
+}
+
 function elements() {
   var numbers = document.querySelectorAll('.number');
   var messages = [];
 
-  //clears every highlight
+  //clears every highlight and matches highlights
   for (var i = 0; i < numbers.length; i++) {
     numbers[i].classList.remove("highlight")
-  }
-  //matches and highlights
-  for (var i = 0; i < numbers.length; i++) {
     numbers[i].innerHTML = random(0, 9);
   }
 
-  // same row matching
-  function matchWholeRow(start) {
-    var start = 0;
-    if (numbers[start].innerHTML === numbers[start + 1].innerHTML && numbers[
-        start].innerHTML === numbers[start + 2].innerHTML && numbers[start + 1]
-      .innerHTML ===
-      numbers[start + 2].innerHTML) {
-      number[start].classList.add("highlight");
-      number[start + 1].classList.add("highlight");
-      number[start + 2].classList.add("highlight");
-    }
-  }
   matchWholeRow(0);
   matchWholeRow(3);
   matchWholeRow(6);
